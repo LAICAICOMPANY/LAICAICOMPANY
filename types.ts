@@ -1,6 +1,5 @@
 export interface ServicePlan {
   title: string;
-  price: string;
   features: string[];
   recommended?: boolean;
 }

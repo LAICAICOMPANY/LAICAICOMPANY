@@ -5,7 +5,6 @@ import { PenTool, Users, Crown, Check } from 'lucide-react';
 const services: ServicePlan[] = [
   {
     title: '기자단 마케팅',
-    price: '40,000 KRW / 명',
     features: [
       '키워드 검색 및 컨텐츠 노출',
       '샤오홍슈 내 브랜드 노출율 확보',
@@ -17,7 +16,6 @@ const services: ServicePlan[] = [
   },
   {
     title: '체험단 마케팅',
-    price: '60,000 KRW / 명',
     recommended: true,
     features: [
       '실제 매장 방문 후 체험 리뷰',
@@ -30,7 +28,6 @@ const services: ServicePlan[] = [
   },
   {
     title: '인플루언서 (왕홍)',
-    price: '50만 ~ 200만+ KRW',
     features: [
       '단기간 브랜드 인지도/신뢰도 상승',
       '팬덤 기반의 고퀄리티 콘텐츠',
@@ -64,7 +61,7 @@ export const Services: React.FC = () => {
          <div className="flex items-center gap-4 mb-16">
              <span className="text-brand-yellow text-6xl font-black opacity-20 select-none">02</span>
              <div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-2">마케팅 전략 & Price</h2>
+                <h2 className="text-4xl md:text-5xl font-bold mb-2">마케팅 전략</h2>
                 <p className="text-gray-400">단계별로 브랜드 신뢰를 쌓아가는 체계적인 접근</p>
              </div>
           </div>
@@ -91,9 +88,6 @@ export const Services: React.FC = () => {
                     {idx === 2 && <Crown className="w-10 h-10 text-purple-400 mb-4" />}
                     
                     <h3 className="text-2xl font-bold text-white mb-2">{service.title}</h3>
-                    <p className={`text-xl font-mono ${service.recommended ? 'text-brand-yellow' : 'text-gray-400'}`}>
-                        {service.price}
-                    </p>
                 </div>
 
                 <div className="flex-grow space-y-4 mb-8">
