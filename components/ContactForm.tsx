@@ -25,8 +25,8 @@ export const ContactForm: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">Email</p>
-                  <a href="mailto:wesk103@gmail.com" className="text-xl font-medium text-white hover:text-brand-yellow transition-colors">
-                    wesk103@gmail.com
+                  <a href="mailto:laicaicompany@gmail.com" className="text-xl font-medium text-white hover:text-brand-yellow transition-colors">
+                    laicaicompany@gmail.com
                   </a>
                 </div>
               </div>
@@ -49,7 +49,7 @@ export const ContactForm: React.FC = () => {
           <div className="lg:w-7/12">
             <div className="bg-[#111] p-8 md:p-10 rounded-3xl border border-white/5 shadow-2xl">
               <form 
-                action="https://formspree.io/f/meeagqzq" 
+                action="https://formspree.io/f/xlgbokaj" 
                 method="POST"
                 className="space-y-6"
               >
