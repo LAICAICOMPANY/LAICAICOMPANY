@@ -72,12 +72,15 @@ export const Hero: React.FC = () => {
               transform: `translate(${mousePosition.x * -30}px, ${mousePosition.y * -20}px)`
             }}
           >
-            <h1 className="text-6xl md:text-8xl lg:text-[9rem] font-black font-display tracking-tighter leading-none w-full max-w-7xl mx-auto text-white">
-              LAICAI<br className="md:hidden" /> COMPANY
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black font-display tracking-tight leading-tight w-full max-w-7xl mx-auto text-white text-center">
+              <span className="bg-[#1D4ED8] px-4 py-1 inline-block mb-2">중국인 고객이 이미 많으신가요?</span><br />
+              <span className="inline-block mb-12">그렇다면 잘못찾아오셨습니다</span>
             </h1>
-            <p className="mt-8 text-sm md:text-xl font-medium tracking-[0.3em] text-white/70 uppercase">
-              Marketing is the heart of growth.
-            </p>
+            <div className="mt-8">
+              <p className="text-xl md:text-3xl font-bold tracking-tight text-white inline-block border-b-2 border-white/80 pb-1">
+                불만족시 100% 환불 해드리는 중국 SNS플랫폼 전문 광고대행사
+              </p>
+            </div>
           </div>
         )}
       </div>

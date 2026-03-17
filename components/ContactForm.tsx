@@ -4,49 +4,20 @@ import { Mail, Phone } from 'lucide-react';
 export const ContactForm: React.FC = () => {
   return (
     <section id="contact" className="py-32 relative">
-      <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
-        <div className="flex flex-col lg:flex-row gap-20">
-
-          {/* Left Side: Info */}
-          <div className="lg:w-5/12 pt-10">
+      <div className="container mx-auto px-6 lg:px-12 max-w-5xl">
+        <div className="flex flex-col items-center">
+          
+          <div className="text-center mb-16">
             <h4 className="text-gray-500 font-semibold uppercase tracking-widest mb-6 text-sm">Contact Us</h4>
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight mb-8 text-brand-gray">
-              프로젝트를 함께 <br />
-              <span className="text-blue-600">시작해볼까요?</span>
+            <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-tight mb-8 text-brand-gray whitespace-nowrap">
+              저희와 프로젝트를 함께 <span className="text-blue-600">하시겠습니까?</span>
             </h2>
-            <p className="text-gray-600 text-xl leading-relaxed font-light mb-16 max-w-sm">
-              당신의 아이디어가 LaiCai를 만나면 현실이 됩니다.<br />가벼운 문의라도 언제든 환영합니다.
+            <p className="text-gray-600 text-xl leading-relaxed font-light mx-auto max-w-md">
+              중국인 고객 유입이 가능한지 알아보고 싶다면?
             </p>
-
-            <div className="space-y-10">
-              <div className="flex items-center gap-6 group">
-                <div className="w-16 h-16 bg-white shadow-sm border border-black/5 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:shadow-md transition-shadow">
-                  <Mail className="text-blue-600 w-6 h-6" />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-1">Email</p>
-                  <a href="mailto:wesk103@gmail.com" className="text-2xl font-bold text-brand-gray hover:text-blue-600 transition-colors tracking-tight">
-                    wesk103@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-6 group">
-                <div className="w-16 h-16 bg-white shadow-sm border border-black/5 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:shadow-md transition-shadow">
-                  <Phone className="text-blue-600 w-6 h-6" />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-1">Phone</p>
-                  <a href="tel:010-8756-7602" className="text-2xl font-bold text-brand-gray hover:text-blue-600 transition-colors tracking-tight">
-                    010-8756-7602
-                  </a>
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Right Side: Form */}
-          <div className="lg:w-7/12">
+          <div className="w-full">
             <div className="bg-white p-10 md:p-14 rounded-[2.5rem] shadow-xl shadow-black/5 border border-black/5">
               <form
                 action="https://formspree.io/f/meeagqzq"

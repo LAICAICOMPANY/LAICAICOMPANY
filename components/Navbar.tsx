@@ -9,7 +9,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode = false }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Services', href: '#services' },
+    { name: 'Work', href: '#work' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -40,16 +40,15 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode = false }) => {
   return (
     <>
       {/* Floating Pill Navbar */}
-      <nav className={`fixed top-8 left-1/2 -translate-x-1/2 z-[100] transition-colors duration-500 rounded-full px-6 py-3 w-[90%] md:w-[600px] flex items-center justify-between backdrop-blur-xl border border-white/10
+      <nav className={`fixed top-8 left-1/2 -translate-x-1/2 z-[100] transition-colors duration-500 rounded-full px-8 py-3 w-[90%] md:w-[600px] flex items-center justify-between backdrop-blur-xl border border-white/10
         ${isLightMode ? 'bg-white/40 text-black shadow-lg shadow-black/5' : 'bg-black/40 text-white shadow-lg shadow-white/5'}
       `}>
-        <a
-          href="#services"
-          onClick={(e) => handleNavClick(e, '#services')}
+        <button
+          onClick={(e) => handleNavClick(e as any, '#work')}
           className="text-xs font-semibold tracking-widest uppercase hover:opacity-50 transition-opacity"
         >
           WORK
-        </a>
+        </button>
 
         <a
           href="#"

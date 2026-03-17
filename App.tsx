@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { Philosophy } from './components/Philosophy';
+import { ImageGallery } from './components/ImageGallery';
 import { About } from './components/About';
-import { Recommendations } from './components/Recommendations';
-import { Services } from './components/Services';
-import { AccountManagement } from './components/AccountManagement';
-import { ContactForm } from './components/ContactForm';
-import { ContactInfo } from './components/ContactInfo';
+import { ContactCTA } from './components/ContactCTA';
 import { Footer } from './components/Footer';
+import { MetallicBackground } from './components/MetallicBackground';
+import ContactPage from './pages/ContactPage';
 
-const App: React.FC = () => {
+const MainPage: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -23,17 +24,12 @@ const App: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Determine global background and text color based on scroll position
-  // Transition threshold: roughly after the hero section (e.g., 15% scroll)
   const isLightMode = scrollProgress > 0.15;
 
   return (
-    <div
-      className={`min-h-screen font-sans transition-colors duration-1000 ease-in-out relative
-        ${isLightMode ? 'bg-[#f5f5f5] text-brand-gray' : 'bg-black text-white'}
-      `}
-    >
-      <div className="fixed inset-0 pointer-events-none z-[999] bg-noise opacity-[0.04] mix-blend-overlay"></div>
+    <div className={`min-h-screen font-sans transition-colors duration-1000 ease-in-out relative ${isLightMode ? 'text-brand-gray' : 'text-white'}`}>
+      <MetallicBackground isLightMode={isLightMode} />
+      <div className="fixed inset-0 pointer-events-none z-[999] bg-noise opacity-[0.05] mix-blend-overlay"></div>
 
       {/* Progress Bar */}
       <div
@@ -45,16 +41,23 @@ const App: React.FC = () => {
 
       <main>
         <Hero />
+        <Philosophy />
+        <ImageGallery />
         <About />
-        <Recommendations />
-        <Services />
-        <AccountManagement />
-        <ContactForm />
-        <ContactInfo />
+        <ContactCTA />
       </main>
 
       <Footer />
     </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+    </Routes>
   );
 };
 
