@@ -72,8 +72,10 @@ export const Hero: React.FC = () => {
               transform: `translate(${mousePosition.x * -30}px, ${mousePosition.y * -20}px)`
             }}
           >
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black font-display tracking-tight leading-tight w-full max-w-7xl mx-auto text-white text-center break-keep">
-              <span className="bg-[#1D4ED8] px-3 md:px-4 py-1 inline-block mb-2">중국인 고객이 이미 많으신가요?</span><br />
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black font-display tracking-tight w-full max-w-7xl mx-auto text-white text-center break-keep leading-[1.5] md:leading-tight">
+              <span className="block mb-4 md:mb-2 text-center">
+                <span className="bg-[#1D4ED8] px-3 md:px-4 py-1.5 box-decoration-clone">중국인 고객이 이미 많으신가요?</span>
+              </span>
               <span className="inline-block mb-6 md:mb-12">그렇다면 잘못찾아오셨습니다</span>
             </h1>
             <div className="mt-6 md:mt-8">
