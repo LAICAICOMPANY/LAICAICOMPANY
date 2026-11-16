@@ -43,7 +43,13 @@ HEAD = f"""<!doctype html>
 <script type="application/ld+json">
 {{"@context":"https://schema.org","@type":"Organization","name":"주식회사 라이차이컴퍼니 (LaiCai Company)","url":"https://laicaicompany.com","logo":"https://laicaicompany.com/logo.png","description":"{DESC}","contactPoint":{{"@type":"ContactPoint","contactType":"customer service","email":"laicaicompany@gmail.com"}}}}
 </script>
-<!-- [ ] 메타 픽셀: 픽셀 기본 코드를 여기(</head> 위)에 붙이면, 문의 접수 시 Lead 이벤트가 자동으로 잡힙니다 -->
+<!-- Meta Pixel (1449018493425141): 모든 페이지 PageView, 문의 접수 시 Lead (app.js) -->
+<script>
+!function(f,b,e,v,n,t,s){{if(f.fbq)return;n=f.fbq=function(){{n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)}};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1449018493425141');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1449018493425141&ev=PageView&noscript=1"/></noscript>
 <link rel="preload" href="assets/hero-poster.jpg?v=11" as="image" media="(orientation: landscape)" />
 <link rel="preload" href="assets/hero-mobile-poster.jpg?v=2" as="image" media="(orientation: portrait)" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
