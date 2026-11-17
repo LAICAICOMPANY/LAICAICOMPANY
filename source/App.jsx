@@ -401,7 +401,7 @@ function Contact() {
               <input required name="name" placeholder="담당자 성함" className={field} />
             </div>
             <input required name="phone" placeholder="연락처" className={field} />
-            <input required name="tel" type="tel" inputMode="tel" autoComplete="tel" placeholder="전화번호" className={field} />
+            <input required name="email" type="email" autoComplete="email" placeholder="이메일" className={field} />
             <fieldset>
               <legend className="mb-3 pt-2 text-sm text-mute">관심 분야</legend>
               <div className="flex flex-wrap gap-2">
