@@ -18,7 +18,7 @@ const { useState, useEffect, useRef } = React;
 /* ───────── 설정 ───────── */
 const CONFIG = {
   email: "laicaicompany@gmail.com",
-  formEndpoint: "https://formspree.io/f/meeagqzq", // 기존 사이트 문의 폼과 같은 Formspree 주소 → 문의가 같은 곳으로 들어감
+  formEndpoint: "/.netlify/functions/contact", // netlify/functions/contact.mjs → Resend로 laicaicompany@gmail.com 발송 (기존 .net과 같은 구조)
   heroVideo: "assets/hero.mp4?v=11", // v13: 사무실 회의 → 젠지 행사 3컷(관중석·입구·응원봉), 11초 루프
   heroPoster: "assets/hero-poster.jpg?v=11",
   heroVideoMobile: "assets/hero-mobile.mp4?v=2", // 세로(9:16) 버전: 같은 4컷을 세로 화면에 맞게 따로 자름, 11초 루프
@@ -368,10 +368,9 @@ function Contact() {
     e.preventDefault();
     setSending(true); setFailed(false);
     const fd = new FormData(e.target);
-    fd.set("interest", fd.getAll("interest").join(", "));
-    fd.set("_subject", `[홈페이지 문의] ${fd.get("company") || ""}`);
+    const body = { ...Object.fromEntries(fd), interest: fd.getAll("interest").join(", ") };
     try {
-      const res = await fetch(CONFIG.formEndpoint, { method: "POST", body: fd, headers: { Accept: "application/json" } });
+      const res = await fetch(CONFIG.formEndpoint, { method: "POST", body: JSON.stringify(body), headers: { "Content-Type": "application/json" } });
       if (!res.ok) throw new Error(res.status);
       setSent(true);
       window.fbq && window.fbq("track", "Lead"); // 메타 픽셀을 붙이면 문의 접수가 전환으로 잡힘
@@ -396,6 +395,7 @@ function Contact() {
             <p className="text-xl font-bold">프로젝트 문의서</p>
           </div>
           <form onSubmit={onSubmit} name="contact" className="mt-6 space-y-5">
+            <input name="honeypot" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
             <div className="grid gap-5 sm:grid-cols-2">
               <input required name="company" placeholder="회사·브랜드명" className={field} />
               <input required name="name" placeholder="담당자 성함" className={field} />

@@ -8,7 +8,9 @@
 - 이 폴더의 리뉴얼본은 **기존 사이트를 통째로 교체**하는 것이 목표
 - 기존 사이트에서 그대로 가져온 것 (빠뜨리면 안 됨)
   - 네이버 사이트 인증 메타태그 `naver-site-verification` (index.html `<head>`)
-  - 문의 폼 주소 Formspree `https://formspree.io/f/meeagqzq` (App.jsx `CONFIG.formEndpoint`) → 문의가 기존과 같은 메일함으로 들어감
+  - 문의 폼: Formspree 안 씀. `netlify/functions/contact.mjs`가 Resend API로 laicaicompany@gmail.com 에 발송 (App.jsx `CONFIG.formEndpoint` = `/.netlify/functions/contact`)
+    - Netlify 환경변수 `RESEND_API_KEY` · `CONTACT_FROM_EMAIL`(noreply@laicaicompany.net) · `CONTACT_TO_EMAIL`(laicaicompany@gmail.com) — laicaicompany.net 사이트(laicaicorp)와 같은 값
+    - 기존 laicaicompany.net 과 같은 구조: JSON 전송, 숨김칸 `honeypot`이 채워진 요청은 봇으로 보고 버림
   - `logo.png`, `og-image.png`, `robots.txt`, `sitemap.xml`
   - 도메인 laicaicompany.com 연결은 Netlify 쪽 설정이므로 건드리지 않음
 
@@ -32,15 +34,13 @@ site/                    ← 배포 폴더. 이 폴더 전체를 Netlify에 올�
    - Node가 없으면 설치 안내(https://nodejs.org LTS). 급하면 `python build.py preview`로 미리보기만 가능
 3. **로컬 확인**: `cd site` 후 `python -m http.server 8765` → 브라우저에서 http://localhost:8765
    - 휴대폰 화면 확인: 브라우저 개발자도구(F12) → 기기 툴바(Ctrl+Shift+M) → iPhone 크기
-4. **배포** (아래 중 기존 방식에 맞는 것)
-   - (A) Netlify 사이트 화면 → Deploys → `site` 폴더를 끌어다 놓기. 가장 간단
-   - (B) Netlify CLI: `npx netlify-cli deploy --dir=site --prod` (처음엔 `npx netlify-cli login`, `link` 필요)
-   - (C) 기존 프로젝트가 GitHub 연동 자동배포라면: 기존 저장소의 배포 폴더(`dist` 등)가 이 `site` 내용이 되도록 바꿔서 커밋. 기존 Vite 설정이 `npm run build`로 덮어쓰지 않게 Netlify의 Build command / Publish directory를 확인하고 사용자에게 먼저 설명할 것
+4. **배포** — GitHub `LAICAICOMPANY/LAICAICOMPANY` main 에 커밋·푸시하면 Netlify가 자동 배포 (`netlify.toml`: publish=site, functions=netlify/functions)
+   - ⚠ `site` 폴더 끌어다 놓기는 문의 함수가 빠져서 **폼이 죽는다**
    - 배포 전, 기존 사이트를 되돌릴 수 있게 Netlify Deploys 목록에서 현재 배포가 남아 있는지 사용자에게 알려 줄 것 (Netlify는 이전 배포로 "Publish deploy" 되돌리기 가능)
 
 ## 4. 배포 후 꼭 확인할 것
 - [ ] PC와 휴대폰에서 첫 화면 영상이 나오는지 (PC는 가로 `hero.mp4`, 세로 화면은 `hero-mobile.mp4`가 자동으로 나옴)
-- [ ] 문의 폼 테스트 1건 → Formspree에 연결된 메일함에 들어오는지. 테스트 문의임을 적어서 보내고, 실제로 보내기 전에 사용자에게 확인받을 것
+- [ ] 문의 폼 테스트 1건 → laicaicompany@gmail.com 에 들어오는지 (안 오면 Netlify → Logs → Functions → contact 의 `Resend Error` 확인). 테스트 문의임을 적어서 보내고, 실제로 보내기 전에 사용자에게 확인받을 것
 - [ ] 이전 캐시가 보이면 Ctrl+F5
 
 ## 5. 디자인 원칙 (수정할 때 지킬 것)
