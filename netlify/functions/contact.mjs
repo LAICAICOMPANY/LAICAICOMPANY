@@ -9,8 +9,8 @@ export default async (req) => {
   const f = await req.json().catch(() => ({}));
   if (f.honeypot) return Response.json({ success: true }); // 숨김칸이 채워졌으면 봇 → 성공인 척 무시
   const get = (k, max) => String(f[k] ?? "").trim().slice(0, max);
-  const company = get("company", 100), name = get("name", 50), phone = get("phone", 50);
-  if (!company || !name || !phone) return Response.json({ error: "회사명·성함·연락처를 입력해주세요." }, { status: 400 });
+  const company = get("company", 100), name = get("name", 50), phone = get("phone", 50), tel = get("tel", 30);
+  if (!company || !name || !phone || !tel) return Response.json({ error: "회사명·성함·연락처·전화번호를 입력해주세요." }, { status: 400 });
 
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -23,6 +23,7 @@ export default async (req) => {
         `회사·브랜드명: ${company}`,
         `담당자: ${name}`,
         `연락처: ${phone}`,
+        `전화번호: ${tel}`,
         `관심 분야: ${get("interest", 300) || "-"}`,
         "",
         get("message", 5000) || "(내용 없음)",
