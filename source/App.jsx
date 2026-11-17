@@ -57,7 +57,7 @@ const CLIENTS = [
   // [ ] logo: "assets/logos/xxx.svg" 를 넣으면 글자 대신 로고 표시 (흑백 단색 로고 권장)
   // [ ] 사이트에 이름을 노출해도 되는 곳만 남기기 (특히 젠지·오뚜기는 사전 동의)
   { name: "Gen.G", work: "중국 팬 이벤트" },
-  { name: "OTTOGI", work: "중국 팬 이벤트" },
+  { name: "OTOKI", work: "중국 팬 이벤트" },
   { name: "NEOTERIA", work: "현지 촬영 · 라이브" },
   { name: "BALLOP", work: "샤오홍슈 운영" },
   { name: "GTS GLOBAL", work: "중국 마케팅" },

@@ -37,7 +37,7 @@ const CLIENTS = [
   // [ ] logo: "assets/logos/xxx.svg" 를 넣으면 글자 대신 로고 표시 (흑백 단색 로고 권장)
   // [ ] 사이트에 이름을 노출해도 되는 곳만 남기기 (특히 젠지·오뚜기는 사전 동의)
   { name: "Gen.G", work: "\uC911\uAD6D \uD32C \uC774\uBCA4\uD2B8" },
-  { name: "OTTOGI", work: "\uC911\uAD6D \uD32C \uC774\uBCA4\uD2B8" },
+  { name: "OTOKI", work: "\uC911\uAD6D \uD32C \uC774\uBCA4\uD2B8" },
   { name: "NEOTERIA", work: "\uD604\uC9C0 \uCD2C\uC601 \xB7 \uB77C\uC774\uBE0C" },
   { name: "BALLOP", work: "\uC0E4\uC624\uD64D\uC288 \uC6B4\uC601" },
   { name: "GTS GLOBAL", work: "\uC911\uAD6D \uB9C8\uCF00\uD305" },
