@@ -33,13 +33,13 @@ HEAD = f"""<!doctype html>
 <meta property="og:url" content="https://laicaicompany.com" />
 <meta property="og:title" content="{TITLE}" />
 <meta property="og:description" content="{DESC}" />
-<meta property="og:image" content="https://laicaicompany.com/og-image.png" />
+<meta property="og:image" content="https://laicaicompany.com/og-image.png?v=2" />
 <meta property="og:site_name" content="라이차이컴퍼니" />
 <meta property="og:locale" content="ko_KR" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{TITLE}" />
 <meta name="twitter:description" content="{DESC}" />
-<meta name="twitter:image" content="https://laicaicompany.com/og-image.png" />
+<meta name="twitter:image" content="https://laicaicompany.com/og-image.png?v=2" />
 <script type="application/ld+json">
 {{"@context":"https://schema.org","@type":"Organization","name":"주식회사 라이차이컴퍼니 (LaiCai Company)","url":"https://laicaicompany.com","logo":"https://laicaicompany.com/logo.png","description":"{DESC}","contactPoint":{{"@type":"ContactPoint","contactType":"customer service","email":"laicaicompany@gmail.com"}}}}
 </script>
