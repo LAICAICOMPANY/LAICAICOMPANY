@@ -363,7 +363,7 @@ function Contact() {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [failed, setFailed] = useState(false);
-  const interests = ["도우인 상점·라이브", "샤오홍슈 계정·스토어", "왕홍·KOL·체험단", "팝업·행사", "현지 촬영", "티몰·이커머스", "GEO·SEO·커뮤니티", "법인·현지 업무", "기타"];
+  const interests = ["도우인 상점·라이브", "샤오홍슈 계정·스토어", "왕홍·KOL·체험단", "팝업·행사", "현지 촬영", "티몰·이커머스", "Reddit 커뮤니티", "법인·현지 업무", "기타"];
   const onSubmit = async (e) => {
     e.preventDefault();
     setSending(true); setFailed(false);

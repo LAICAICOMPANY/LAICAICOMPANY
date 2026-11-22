@@ -163,7 +163,7 @@ function Contact() {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [failed, setFailed] = useState(false);
-  const interests = ["\uB3C4\uC6B0\uC778 \uC0C1\uC810\xB7\uB77C\uC774\uBE0C", "\uC0E4\uC624\uD64D\uC288 \uACC4\uC815\xB7\uC2A4\uD1A0\uC5B4", "\uC655\uD64D\xB7KOL\xB7\uCCB4\uD5D8\uB2E8", "\uD31D\uC5C5\xB7\uD589\uC0AC", "\uD604\uC9C0 \uCD2C\uC601", "\uD2F0\uBAB0\xB7\uC774\uCEE4\uBA38\uC2A4", "GEO\xB7SEO\xB7\uCEE4\uBBA4\uB2C8\uD2F0", "\uBC95\uC778\xB7\uD604\uC9C0 \uC5C5\uBB34", "\uAE30\uD0C0"];
+  const interests = ["\uB3C4\uC6B0\uC778 \uC0C1\uC810\xB7\uB77C\uC774\uBE0C", "\uC0E4\uC624\uD64D\uC288 \uACC4\uC815\xB7\uC2A4\uD1A0\uC5B4", "\uC655\uD64D\xB7KOL\xB7\uCCB4\uD5D8\uB2E8", "\uD31D\uC5C5\xB7\uD589\uC0AC", "\uD604\uC9C0 \uCD2C\uC601", "\uD2F0\uBAB0\xB7\uC774\uCEE4\uBA38\uC2A4", "Reddit \uCEE4\uBBA4\uB2C8\uD2F0", "\uBC95\uC778\xB7\uD604\uC9C0 \uC5C5\uBB34", "\uAE30\uD0C0"];
   const onSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
