@@ -417,7 +417,7 @@ function Contact() {
             <button disabled={sent || sending} className="w-full bg-ink py-4 text-lg font-bold text-white transition hover:bg-seal disabled:bg-mute">
               {sent ? "문의가 접수되었습니다" : sending ? "보내는 중" : "문의 접수"}
             </button>
-            {sent && <p role="status" className="font-bold">남겨주신 이메일로 1영업일 내 답장드립니다. 메일함과 스팸함을 꼭 확인해 주세요.</p>}
+            {sent && <p role="status" className="font-bold">남겨주신 이메일로 1영업일 내 답장드립니다. 메일함을 꼭 확인해 주세요.</p>}
             {failed && <p role="alert" className="text-sm text-seal">전송되지 않았습니다. 잠시 후 다시 누르시거나 {CONFIG.email} 로 메일 주세요.</p>}
           </form>
         </div>
