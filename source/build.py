@@ -24,7 +24,7 @@ HEAD = f"""<!doctype html>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{TITLE}</title>
-<link rel="icon" type="image/png" href="/logo.png" />
+<link rel="icon" type="image/png" href="/logo.png?v=2" />
 <meta name="naver-site-verification" content="50ab138917d8b33e23f8cbfab3ed7e2737ff8ac1" />
 <meta name="description" content="{DESC}" />
 <meta name="keywords" content="라이차이, 라이차이컴퍼니, LaiCai, 중국마케팅, 도우인, 샤오홍슈, 왕홍, 중국 라이브커머스, 티몰 입점, 중국 법인 설립, 중국 팝업" />
